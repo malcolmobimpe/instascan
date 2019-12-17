@@ -18,6 +18,7 @@ class Camera {
   }
   
   
+
   async start() {
     let constraints;
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -26,7 +27,7 @@ class Camera {
       constraints = {
         audio: false,
         video: {
-         facingMode: { exact: "environment" } ,
+          facingMode: 'environment',
           mandatory: {
             sourceId: this.id,
             minWidth: 600,
@@ -53,10 +54,7 @@ class Camera {
 
     this._stream = await Camera._wrapErrors(async () => {
       return await navigator.mediaDevices.getUserMedia(constraints);
-    });
-
-    return this._stream;
-  }
+});
 
   stop() {
     if (!this._stream) {
