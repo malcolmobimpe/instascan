@@ -26,7 +26,7 @@ class Camera {
       constraints = {
         audio: false,
         video: {
-          facingMode: 'environment',
+         facingMode: { exact: "environment" } ,
           mandatory: {
             sourceId: this.id,
             minWidth: 600,
