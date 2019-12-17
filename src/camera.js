@@ -55,7 +55,7 @@ class Camera {
     this._stream = await Camera._wrapErrors(async () => {
       return await navigator.mediaDevices.getUserMedia(constraints);
 });
-
+  }
   stop() {
     if (!this._stream) {
       return;
